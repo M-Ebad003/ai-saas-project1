@@ -1,9 +1,9 @@
 import React from 'react'
 
-const TransformationId = () => {
+const TransformationPage = () => {
   return (
-    <div>TransformationId</div>
+    <div>TransformationPage</div>
   )
 }
 
-export default TransformationId
+export default TransformationPage

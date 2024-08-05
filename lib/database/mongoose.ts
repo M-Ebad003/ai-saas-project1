@@ -1,6 +1,6 @@
 import mongoose, { Mongoose } from "mongoose";
 
-const MONGO_URL=process.env.MONGO_URL;
+const MONGODB_URL=process.env.MONGODB_URL;
 
 
 interface MongoooseConnection{
@@ -19,8 +19,8 @@ if(!cached){
 export const connectDatabase=async()=>{
     if(cached.conn) return cached.conn;
 
-    if(!MONGO_URL) throw new Error("Missing mongodb_URL");
-     cached.promise=cached.promise || mongoose.connect(MONGO_URL,{dbName: 'Nextify',bufferCommands:false})
+    if(!MONGODB_URL) throw new Error("Missing mongodb_URL");
+     cached.promise=cached.promise || mongoose.connect(MONGODB_URL,{dbName: 'Nextify',bufferCommands:false})
 
      cached.conn=await cached.promise;
         console.log("connected mongodb")
