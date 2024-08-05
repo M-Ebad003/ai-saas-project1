@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/form"
 import { useForm } from "react-hook-form"
 import { Input } from "@/components/ui/input"
-import { defaultValues } from "../../constants"
+import { defaultValues } from "@/constant"
 import { TransformationFormProps } from "../../types"
 import { CustomField } from "./CustomField"
 
@@ -27,7 +27,7 @@ export const formSchema = z.object({
 const TransformationForm = ({ action, data = null }: TransformationFormProps) => {
     const initialValues = data && action === 'Update' ? {
         title: data?.title,
-        aspectRatio: data?.aspectRation,
+        aspectRatio: data?.aspectRatio,
         color: data?.color,
         prompt: data?.prompt,
         publicId: data?.publicId,
