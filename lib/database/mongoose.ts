@@ -1,28 +1,32 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose, { Mongoose } from 'mongoose';
 
-const MONGODB_URL=process.env.MONGODB_URL;
+const MONGODB_URL = process.env.MONGODB_URL;
 
-
-interface MongoooseConnection{
-    conn: Mongoose | null;
-    promise: Promise<Mongoose> | null;
+interface MongooseConnection {
+  conn: Mongoose | null;
+  promise: Promise<Mongoose> | null;
 }
 
-let cached: MongoooseConnection=(global as any).mongoose
+let cached: MongooseConnection = (global as any).mongoose
 
-if(!cached){
-    cached=(global as any).mongoose={
-        conn:null, promise:null
-    }
+if(!cached) {
+  cached = (global as any).mongoose = { 
+    conn: null, promise: null 
+  }
 }
 
-export const connectDatabase=async()=>{
-    if(cached.conn) return cached.conn;
+export const connectDatabase = async () => {
+  if(cached.conn) return cached.conn;
 
-    if(!MONGODB_URL) throw new Error("Missing mongodb_URL");
-     cached.promise=cached.promise || mongoose.connect(MONGODB_URL,{dbName: 'Nextify',bufferCommands:false})
+  if(!MONGODB_URL) throw new Error('Missing MONGODB_URL');
 
-     cached.conn=await cached.promise;
-        console.log("connected mongodb")
-     return cached.conn;
+  cached.promise = 
+    cached.promise || 
+    mongoose.connect(MONGODB_URL, { 
+      dbName: 'nextify', bufferCommands: false 
+    })
+
+  cached.conn = await cached.promise;
+
+  return cached.conn;
 }
