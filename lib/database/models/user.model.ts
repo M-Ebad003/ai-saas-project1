@@ -4,7 +4,7 @@ const userSchema=new Schema({
     clerkId:{type:String, required:true ,unique:true},
     email:{type:String, required:true ,unique:true},
     userName:{type:String, required:true, unique:true},
-    photo:{type:Number, required:true},
+    photo:{type:String, required:true},
     firstName:{type:String},
     lastName:{type:String},
     planId:{type:Number ,default:1},
@@ -13,4 +13,4 @@ const userSchema=new Schema({
 
 const User=models?.User || model("User",userSchema);
 
-export default User
+export default User;
