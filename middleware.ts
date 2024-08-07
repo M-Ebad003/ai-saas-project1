@@ -1,14 +1,14 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-// const isProtected=createRouteMatcher([
-//   '/'
-// ]);
-// export default clerkMiddleware((auth,req)=>{
-//   if(isProtected(req)){
-//     auth().protect();
-//   }
-// });
-export default clerkMiddleware();
+const isProtected=createRouteMatcher([
+  '/'
+]);
+export default clerkMiddleware((auth,req)=>{
+  if(isProtected(req)){
+    auth().protect();
+  }
+});
+
 export const config = {
   matcher: [
     // Skip Next.js internals and all static files, unless found in search params
