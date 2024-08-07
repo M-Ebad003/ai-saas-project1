@@ -14,7 +14,7 @@ import {
 import { useForm } from "react-hook-form"
 import { Input } from "@/components/ui/input"
 import { aspectRatioOptions, defaultValues, transformationTypes } from "@/constant"
-import { TransformationFormProps } from "../../types"
+import { TransformationFormProps, Transformations } from "../../types"
 import { CustomField } from "./CustomField"
 import {
     Select,
@@ -37,7 +37,7 @@ export const formSchema = z.object({
 const TransformationForm = ({ type, action, data = null, userId, creditBalance, config = null }: TransformationFormProps) => {
     const transformationType = transformationTypes[type];
     const [Image, setImage] = useState(data);
-    const [newTransformation, setNewTransformation] = useState<Transformations | null>
+    const [newTransformation, setNewTransformation] = useState< Transformations | null>
         (null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isTransforming, setIsTransforming] = useState(false);
