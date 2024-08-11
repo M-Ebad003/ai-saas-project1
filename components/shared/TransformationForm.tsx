@@ -10,7 +10,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-
 import { Button } from "@/components/ui/button"
 import {
     Form,
@@ -42,16 +41,15 @@ export const formSchema = z.object({
     prompt: z.string().optional(),
     publicId: z.string(),
 })
-
 const TransformationForm = ({ action, data = null, userId, type, creditBalance, config = null }: TransformationFormProps) => {
     const transformationType = transformationTypes[type];
     const [image, setImage] = useState(data)
     const [newTransformation, setNewTransformation] = useState<Transformations | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isTransforming, setIsTransforming] = useState(false);
-    const [transformationConfig, setTransformationConfig] = useState(config)
-    const [isPending, startTransition] = useTransition()
-    const router = useRouter()
+    const [transformationConfig, setTransformationConfig] = useState(config);
+    const [isPending, startTransition] = useTransition();
+    const router = useRouter();
 
     const initialValues = data && action === 'Update' ? {
         title: data?.title,
@@ -165,6 +163,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
         startTransition(async () => {
             await updateCredits(userId, creditFee)
         })
+        console.log(transformationConfig)
     }
     useEffect(() => {
         if (image && (type === 'restore' || type === 'removeBackground')) {

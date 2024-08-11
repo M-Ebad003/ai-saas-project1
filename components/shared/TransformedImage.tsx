@@ -25,7 +25,6 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
                 <h3 className="h3-bold text-dark-600">
                     Transformed
                 </h3>
-
                 {hasDownload && (
                     <button
                         className="download-btn"
@@ -41,7 +40,6 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
                     </button>
                 )}
             </div>
-
             {image?.publicId && transformationConfig ? (
                 <div className="relative">
                     <CldImage

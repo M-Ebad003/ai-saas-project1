@@ -12,7 +12,7 @@ import { v2 as cloudinary } from 'cloudinary'
 const populateUser = (query: any) => query.populate({
     path: "author",
     model: User,
-    select: '_id firstName lastName'
+    select: '_id firstName lastName clerkId'
 })
 
 export async function addImage({ image, userId, path }: AddImageParams) {
@@ -74,7 +74,7 @@ export async function getImageById(imageId: string) {
         handleError(error)
     }
 }
-export async function getAllImages({ limit = 0, page = 1, searchQuery = '' }: { limit?: number, page: number, searchQuery?: string }) {
+export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: { limit?: number, page: number, searchQuery?: string }) {
     try {
         await connectToDatabase();
         cloudinary.config({

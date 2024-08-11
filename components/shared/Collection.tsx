@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -14,9 +13,7 @@ import {
 import { transformationTypes } from "@/constant";
 import { IImage } from "@/lib/database/models/image.model";
 import { formUrlQuery } from "@/lib/utils";
-
 import { Button } from "../ui/button";
-
 import { Search } from "./Search";
 import { TransformationTypeKey } from "@/types";
 
