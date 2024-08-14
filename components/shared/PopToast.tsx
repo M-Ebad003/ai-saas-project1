@@ -35,15 +35,11 @@ const PopToast = () => {
             });
           }
         }
-    const pop = () => {
         useEffect(() => {
             showToastOnce()
         }, [])
-    }
     return (
-        <>
-            {pop()}
-        </>
+       <div></div>
     )
 }
 export default PopToast
