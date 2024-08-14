@@ -17,7 +17,7 @@ const Mobilenav = () => {
     return (
         <header className='header'>
             <Link href='/' className='flex items-center gap-2 md:py-2'>
-                <Image src="/assets/images/logo-text.svg" alt='logo' width={180} height={28} />
+                <Image src="/assets/images/NEXTIFY.png" alt='logo' width={200} height={28} />
             </Link>
             <nav className='flex gap-2'>
                 <SignedIn>
