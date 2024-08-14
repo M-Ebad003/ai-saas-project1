@@ -28,7 +28,7 @@ const Mobilenav = () => {
                         </SheetTrigger>
                         <SheetContent className='sheet-content sm:w-64'>
                             <>
-                                <Image src='/assets/images/logo-text.svg' alt='logo' width={152} height={23} />
+                                <Image src='/assets/images/NEXTIFY.png' alt='logo' width={172} height={23} />
                                 <ul className='header-nav_elements'>
                                     {navLinks.map((link) => {
                                         const isActive = link.route === pathname
