@@ -3,6 +3,7 @@ import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "../lib/utils";
 import { ClerkLoaded, ClerkLoading, ClerkProvider } from "@clerk/nextjs";
+import LoadingAnimation from "@/components/shared/LoadingAnimation";
 
 const IBMPlex = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -27,7 +28,10 @@ export default function RootLayout({
       <html lang="en">
         <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
           <ClerkLoading>
-          <h2 className="flex items-center justify-center h-screen text-2xl">LOADING...</h2>
+            <div className="flex items-center justify-center h-screen">
+              <span className="mr-4 text-5xl">LOADING</span>
+              <LoadingAnimation/>
+            </div>
           </ClerkLoading>
           <ClerkLoaded>
             {children}

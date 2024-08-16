@@ -96,7 +96,7 @@ export const navLinks = [
       _id: 3,
       name: "Premium Package",
       icon: "/assets/icons/free-plan.svg",
-      price: 199,
+      price: 99,
       credits: 2000,
       inclusions: [
         {
@@ -123,7 +123,7 @@ export const navLinks = [
     restore: {
       type: "restore",
       title: "Restore Image",
-      subTitle: "Refine images by removing noise and imperfections",
+      subTitle: "Refine images by removing noise and imperfections.Sharpen the images",
       config: { restore: true },
       icon: "image.svg",
     },
