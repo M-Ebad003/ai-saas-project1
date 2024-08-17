@@ -32,7 +32,7 @@ const Sidebar = () => {
                             })}
                         </ul>
                         <ul className='sidebar-nav_elements'>
-                        {navLinks.slice(6).map((link) => {
+                            {navLinks.slice(6).map((link) => {
                                 const isActive = link.route === pathname
                                 return (
                                     <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
@@ -50,11 +50,14 @@ const Sidebar = () => {
                     </SignedIn>
 
                     <SignedOut>
-                        <Button asChild className='button bg-purple-gradient bg-cover'>
-                            <Link href='/sign-in'>
-                                Login
-                            </Link>
-                        </Button>
+                        <div>
+                            <h3 className='text-3xl flex text-center justify-center text-blue-800 font-bold mb-4 tracking-wide'>An AI-Powered Image Generator</h3>
+                            <Button asChild className='button bg-purple-gradient bg-cover'>
+                                <Link href='/sign-in'>
+                                    Login
+                                </Link>
+                            </Button>
+                        </div>
                     </SignedOut>
                 </nav>
             </div>

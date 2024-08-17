@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "../lib/utils";
 import { ClerkLoaded, ClerkLoading, ClerkProvider } from "@clerk/nextjs";
 import LoadingAnimation from "@/components/shared/LoadingAnimation";
+import { dark } from '@clerk/themes'
 
 const IBMPlex = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -23,19 +24,21 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider appearance={{
-      variables: { colorPrimary: '#624cf5' }
+      variables: { colorPrimary: '#624cf5' },
+      baseTheme: dark,
     }}>
       <html lang="en">
-        <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
-          <ClerkLoading>
-            <div className="flex items-center justify-center h-screen">
-              <span className="mr-4 text-5xl">LOADING</span>
-              <LoadingAnimation/>
-            </div>
-          </ClerkLoading>
-          <ClerkLoaded>
-            {children}
-          </ClerkLoaded>
+        <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)} >
+            <ClerkLoading>
+              <div className="flex items-center justify-center h-screen">
+                <span className="mr-4 text-5xl">LOADING</span>
+                <LoadingAnimation />
+              </div>
+            </ClerkLoading>
+
+            <ClerkLoaded>
+              {children}
+            </ClerkLoaded>
         </body>
       </html>
     </ClerkProvider>
