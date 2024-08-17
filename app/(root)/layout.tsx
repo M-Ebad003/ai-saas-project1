@@ -1,7 +1,5 @@
 import Mobilenav from '@/components/shared/Mobilenav'
 import Sidebar from '@/components/shared/Sidebar'
-import { ThemeProvider } from '@/components/shared/ThemeProvider'
-import { ModeToggle } from '@/components/shared/ToggleButton'
 import { Toaster } from '@/components/ui/toaster'
 import React from 'react'
 import { ToastContainer } from 'react-toastify'
